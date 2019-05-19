@@ -30,10 +30,10 @@ a {
     color: #000;
 }
 
-#main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.main {
+    display: flex;
     height: 100vh;
+    width: 100%;
 }
 
 .split {
@@ -41,12 +41,45 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    transition: 1s ease-in-out;
 }
 
 .split.left {
-    background: url('/img/art-backlit-dark-556669.jpg') no-repeat center/cover;
+    background: url('/img/art-backlit-dark-556669 (1).jpg') no-repeat center/cover;
 }
 
 .split.right {
     background: url('/img/apple-browser-creative-3080.jpg') no-repeat center/cover;
+}
+
+/* Sliding */
+.hover-left .left, .hover-right .right {
+    width: 75%;
+}
+
+.hover-left .right, .hover-right .left {
+    width: 25%;
+}
+
+/* Media Query */
+@media (max-width: 800px) {
+    .main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .split {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-height: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
 }
